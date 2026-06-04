@@ -59,7 +59,7 @@ test.describe('EduVerse AI E2E Workflows', () => {
     await expect(dyslexiaToggle).toBeVisible();
     
     // Toggle on
-    await page.locator('button').nth(1).click();
+    await page.locator('h4:has-text("OpenDyslexic Typography Option")').locator('xpath=../..').locator('button').click();
     
     // Check if html body applies font wrapper classlist
     const htmlClass = await page.evaluate(() => document.documentElement.classList.contains('dyslexia-font'));
